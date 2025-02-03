@@ -84,3 +84,22 @@ npm create vite@latest
 버전에러가 나온다면 버전에 맞게 다운그레이드가 필요
 npm install --save react@^18.0.0 react-dom@18.0.0
 npm install @testing-library/react@13.4.0
+
+리엑트에서 자주나오는 ES6(바닐라js) 개념들
+ - 클래스, 화살표함수, 배열, 스프레드 문법(연산), 삼항연산자, 모듈
+
+리엑트 기초
+ - SPA를 사용하기 위해 쓰는것이 react
+리엑트의 목표
+ - 여러가지 방법으로 웹 페이지에서 HTML을 랜더링하는것.
+ - 컴포넌트들을 만들고 제작하여 root에 뿌리는형식.
+
+createRoot 함수 : React 구성요소가 표시될 HTML 요소를 정의하는 함수.
+ -> 최종적으로 index.html 파일에 모든것을 랜더링
+ app.js -> index.js -> index.html파일로 전달되는 구조.
+
+JSX : JavaScript XML의 약자
+ -> 목적 : React에서 HTML 구현시 사용하는 문법.
+ -> jsx는 HTML 태그를 React 요소로 변환.
+ -> 리엑트의 첫걸음은 JSX식 코딩에 익숙해져야....
+ -> 주의사항 : 꼭 JSX로 안해도되긴함. React에서는 JSX를 쓰면 더 쉽게 작성 가능.
