@@ -6,12 +6,19 @@ function Car(props) {
   }
   
   function Garage() {
-    const cars = ['Ford', 'BMW', 'Audi'];
+    const cars = [
+        {id: 1, brand: '현대'},
+        {id: 2, brand: '기아'},
+        {id: 3, brand: '벤츠'},
+
+    ]
     return (
       <>
           <h1>Who lives in my garage?</h1>
           <ul>
-          {cars.map((car) => <Car brand={car} />)}
+          {/*cars.map((car) => <Car brand={car} />)*/
+            cars.map((car) => <Car key={car.id} brand={car.brand} />)
+          }
         </ul>
       </>
     );

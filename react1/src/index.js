@@ -9,6 +9,7 @@ import Evt from './basic/Events.js';
 import EvtExam from './basic/EventExam1.js';
 import ConRender from './basic/conditionalRender.js'
 import List1 from './basic/reactList.js'
+import Styles from './basic/usingCss.js'
 //import reportWebVitals from './reportWebVitals';
 
 // jsx를 적용하지 않은 예시
@@ -115,7 +116,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<EvtExam />)
 //root.render(<ConRender isGoal={true} />)
 //root.render(<ConRender test={arr1} />);
-root.render(<List1 />)
+//root.render(<List1 />)
+root.render()
 // root.render(
 
 //    <React.StrictMode>
