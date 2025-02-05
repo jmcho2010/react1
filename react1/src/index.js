@@ -7,6 +7,7 @@ import Test from './basic/classComponent.js';
 import Props1 from './basic/propsExam.js';
 import Evt from './basic/Events.js';
 import EvtExam from './basic/EventExam1.js';
+import ConRender from './basic/conditionalRender.js'
 //import reportWebVitals from './reportWebVitals';
 
 // jsx를 적용하지 않은 예시
