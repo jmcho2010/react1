@@ -9,16 +9,21 @@ import App from './App';
 // jsx 적용
 // const el = <h1>이것은 JSX일까?</h1>;
 // jsx의 표현식
-const test = "군침싺싺싺싺"
-const el2 = <h1>리엑트의 신기한 기능 {test} 개 보여줄게요</h1>
+// const test = "군침싺싺싺싺"
+// const el2 = <h1>리엑트의 신기한 기능 {test} 개 보여줄게요</h1>
+
+const el3 = <div>
+  <h1>이렇게 써도 되는거 아님?</h1>
+</div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(el2
+root.render(el3);
+// root.render(
 
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>
-);
+//    <React.StrictMode>
+//      <App />
+//    </React.StrictMode>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
