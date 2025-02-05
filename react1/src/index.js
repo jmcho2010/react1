@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Car from './util.js';
 import Test from './basic/classComponent.js';
+import Props1 from './basic/propsExam.js';
 //import reportWebVitals from './reportWebVitals';
 
 // jsx를 적용하지 않은 예시
@@ -103,12 +104,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // 함수 컴포넌트건 클래스 컴포넌트건 결국 랜더링 방식은 똑같음.
 // root.render(<Car />);
-root.render(
+// root.render(<Test result="무엇이"/>)
+// root.render(<Test />)
+root.render(<Props1 />)
+// root.render(
 
-   <React.StrictMode>
-     <Test />
-   </React.StrictMode>
-);
+//    <React.StrictMode>
+//      <Test />
+//    </React.StrictMode>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
