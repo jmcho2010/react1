@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["test.scss"],"sourcesContent":["$tColor: crimson;\r\n\r\nh1{\r\n    color:$tColor;\r\n}"],"file":"test.css"}
