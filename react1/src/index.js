@@ -117,7 +117,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<ConRender isGoal={true} />)
 //root.render(<ConRender test={arr1} />);
 //root.render(<List1 />)
-root.render()
+root.render(<Styles/>)
 // root.render(
 
 //    <React.StrictMode>
