@@ -12,10 +12,13 @@ import App from './App';
 // const test = "군침싺싺싺싺"
 // const el2 = <h1>리엑트의 신기한 기능 {test} 개 보여줄게요</h1>
 
-const el3 = <div>
-  <h1>이렇게 써도 되는거 아님?</h1>
-</div>
-
+// JSX 규칙
+// jsx문법을 적용시킬떄 HTML태그가 2줄이상이면 소괄호로 감싸줄것을 권장.
+const el3 = (
+  <div>
+    <h1>이렇게 써도 되는거 아님?</h1>
+  </div>
+);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(el3);
 // root.render(
