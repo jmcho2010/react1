@@ -5,6 +5,7 @@ import App from './App';
 import Car from './util.js';
 import Test from './basic/classComponent.js';
 import Props1 from './basic/propsExam.js';
+import Evt from './basic/Events.js';
 //import reportWebVitals from './reportWebVitals';
 
 // jsx를 적용하지 않은 예시
@@ -106,7 +107,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<Car />);
 // root.render(<Test result="무엇이"/>)
 // root.render(<Test />)
-root.render(<Props1 />)
+//root.render(<Props1 />)
+root.render(<Evt />)
+
 // root.render(
 
 //    <React.StrictMode>
