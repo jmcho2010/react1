@@ -48,6 +48,7 @@ function Quiz2(){
             <div onClick={clickCnt}>
                ♥ {count}
             </div>
+            
             {count === 10 && <p>최대 클릭수에 도달함</p>}
         </div>
     );

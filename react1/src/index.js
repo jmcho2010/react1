@@ -102,7 +102,7 @@ let test1 = 13;
 //   );
 // }
 
-
+const arr1 = [];
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // 함수 컴포넌트건 클래스 컴포넌트건 결국 랜더링 방식은 똑같음.
@@ -111,7 +111,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<Test />)
 //root.render(<Props1 />)
 // root.render(<Evt />)
-root.render(<EvtExam />)
+//root.render(<EvtExam />)
+//root.render(<ConRender isGoal={true} />)
+root.render(<ConRender test={arr1} />);
 // root.render(
 
 //    <React.StrictMode>
