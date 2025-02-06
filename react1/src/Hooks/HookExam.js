@@ -29,7 +29,20 @@
 
 
 
-// useReducer
+// useReducer : 컴포넌트에 reducer를 추가하는 React Hook
+//  - state와 비슷하지만 좀더 복잡한 상태관리시 사용하는 Hook
+//  - state의 대체함수.
+//  - state의 경우는 컴포넌트 자체를 전체 통제하는 특징
+//  - reducer는 업데이트의 로직 자체가 분리되어있어서 
+//    컴포넌트의 영향에서 벗어날수있음.
+//  - 컴포넌트 외부에 state를 업데이트 할수 있는 코드를 적는다.
+// reducer vs state
+// state : 관리해야할 상태가 1개일때, 값이 단순할때
+// Reducer : 관리할 state가 1개 이상일때, 값이 복잡하고 프로젝트의 규모가 클때
+//  -> 혹은 값이 유동적일때
+
+
+
 // useMemo
 // useCallback
 // useLayoutEffect
