@@ -10,6 +10,19 @@
 //  -> 그 외 컴포넌트의 전반적인 상태를 관리하는 Hook
 // 사용방식 const [현재상태값, 해당값을 업데이트하는 함수명] = useState(초기상태값)
 
+// useEffect : 컴포넌트 랜더링시 특정 작업을 수행하도록 설정하는 Hook
+//  
+
+// useContext
+// useRef
+
+// useReducer
+// useMemo
+// useCallback
+// useLayoutEffect
+// Hook 커스텀.
+
+
 // Hook은 일반함수와 거의 비슷하긴함.
 // 일반함수 그냥 쓰는게 나을거같은데 굳이써야함?
 // Hook의 장점
