@@ -9,23 +9,79 @@
 
 import React, {useState} from "react";
 
-function UserForm(){
-    const [name, setName] = useState("");
-    const [age, setAge] = useState("");
-    const [submittedData, setSubmittedData] = useState(null);
+//select box
+function SelectBoxTest(){
+    const [sel, setSel] = useState("test3");
 
-    <form onSubmit={handleSubmit}>
-        <label>
-        <input />
-        </label>
+    const selChange = (event) =>{
+        setSel(event.target.value);
+    }
 
-        <label>
-        <input />
-        </label>
-
-    </form>
-
+    return(
+        <form>
+            <select value={sel} onChange={selChange}>
+                <option value="test1">test1</option>
+                <option value="test2">test2</option>
+                <option value="test3">test3</option>
+            </select>
+        </form>
+    )
 }
+
+
+// function UserForm(){
+//     const [name, setName] = useState("");
+//     const [age, setAge] = useState("");
+//     const [submittedData, setSubmittedData] = useState(null);
+
+//     const handleSubmit = (e) =>{
+//         e.preventDefault();
+//         console.log(`전송받은 데이터 ${submittedData}`);
+//         if(age >0){
+//             setSubmittedData({ name, age });
+//             console.log(`전송받은 데이터2222222 ${submittedData}`);
+//             setName("");
+//             setAge("");
+//         }else{
+//             alert("나이는 0 이상 입력해주세요");
+//         }
+//         console.log(`전송받은 데이터3333333 ${submittedData}`);
+//     }
+
+//     return(
+//         <>
+//         <form onSubmit={handleSubmit}>
+//             <label> 이름을 입력하세요:
+//                 <input 
+//                     type="text"
+//                     name="username"
+//                     value={name}
+//                     onChange= {(e) => setName(e.target.value)}
+//                 />
+//             </label>
+//             <label> 나이를 입력하세요:
+//                 <input 
+//                     type="number"
+//                     name="age"
+//                     value={age}
+//                     onChange= {(e) => setAge(e.target.value)}
+//                 />
+//             </label>
+//             <button type="submit">제출</button>
+//         </form>
+
+//         {submittedData && (
+//          <div>
+//             <h3>제출된 정보 : </h3>
+//             <p>이름 : {submittedData.name}</p>
+//             <p>나이 : {submittedData.age}</p>
+//          </div>   
+//         )}
+//     </>
+//     );
+
+
+// }
 
 // function Formtest(){
 //     //const [name, setName] = useState("");
@@ -46,25 +102,26 @@ function UserForm(){
 
 //     return(
 //         <form onSubmit={submitTest}>
-//             <label> 이름을 입력하세요:
-//                 <input 
-//                     type="text"
-//                     name="username"
-//                     value={inputs.username || ""}
-//                     onChange= {handleChange}
-//                 />
-//             </label>
-//             <label> 나이를 입력하세요:
-//                 <input 
-//                     type="number"
-//                     name="age"
-//                     value={inputs.age || ""}
-//                     onChange= {handleChange}
-//                 />
-//             </label>
-//             <input type="submit" />
+            // <label> 이름을 입력하세요:
+            //     <input 
+            //         type="text"
+            //         name="username"
+            //         value={inputs.username || ""}
+            //         onChange= {handleChange}
+            //     />
+            // </label>
+            // <label> 나이를 입력하세요:
+            //     <input 
+            //         type="number"
+            //         name="age"
+            //         value={inputs.age || ""}
+            //         onChange= {handleChange}
+            //     />
+            // </label>
+            // <input type="submit" />
 //         </form>
 //     );
 // }
 
-export default Formtest;
+export default SelectBoxTest;
+//export default Formtest;

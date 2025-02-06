@@ -11,6 +11,7 @@ import ConRender from './basic/conditionalRender.js'
 import List1 from './basic/reactList.js'
 import Styles from './basic/usingCss.js'
 import Forms from './basic/Forms.js'
+import Quiz1 from './basic/quiz.js'
 //import reportWebVitals from './reportWebVitals';
 
 // jsx를 적용하지 않은 예시
@@ -119,7 +120,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<ConRender test={arr1} />);
 //root.render(<List1 />)
 //root.render(<Styles/>)
-root.render(<Forms/>)
+//root.render(<Forms/>)
+root.render(<Quiz1 />);
 // root.render(
 
 //    <React.StrictMode>
