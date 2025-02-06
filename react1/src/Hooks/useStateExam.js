@@ -7,6 +7,8 @@
 import React, {useState, useEffect} from "react";
 
 function State(){
+
+    // state는 필요한만큼 선언해서 컴포넌트 내부의 변수값을 컨트롤함.
     const [name, setName] = useState('');
     const [age, setAge] = useState(0);
     const [hobby, setHobby] = useState('');
