@@ -10,7 +10,9 @@ import Hooks7 from './Hooks/useMemo.js'
 import Hooks8 from './Hooks/customHook.js'
 import Test from './basic/test.js'
 import RoutingApp from './RoutingApp.js';
+import RoutingQuiz1 from './routequiz1/App.js'
+
 
 //Hooks 전용 index
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<RoutingApp />);
+root.render(<RoutingQuiz1 />);

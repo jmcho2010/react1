@@ -12,7 +12,7 @@ export default function RoutingApp(){
         <Navigation />
         <Routes>
             <Route path="/" element={<Home />}>
-                <Route path="/about" element={<About />} />
+                <Route path="/about/:gunchimssak" element={<About />} />
                 <Route path="/products" element={<Products />} />
                 <Route path="*" element={<h1>페이지를 찾을 수 없습니다.</h1>} />
             </Route>
