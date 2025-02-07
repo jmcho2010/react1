@@ -8,6 +8,7 @@ import Hooks5 from './Hooks/useReducer.js'
 import Hooks6 from './Hooks/useReducer2.js'
 import Hooks7 from './Hooks/useMemo.js'
 import Hooks8 from './Hooks/customHook.js'
+import Test from './basic/test.js'
 //Hooks 전용 index
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Test />);

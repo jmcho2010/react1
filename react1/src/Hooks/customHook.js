@@ -31,16 +31,19 @@
 // 커스텀훅의 규칙
 
 import React, {useState, useEffect} from "react";
+import useFetch from './cs'; 
+
 
 function LoadData(){
 
-    const [data, setData] = useState(null);
+    
 
-    useEffect(() => {
-      fetch("https://jsonplaceholder.typicode.com/todos")
-        .then((res) => res.json())
-        .then((data) => setData(data));
-    }, []);
+    // 이 부분을 커스텀훅으로 변경.
+    // 요청은 이 파일에서 진행
+    // 커스텀훅을 따로 분리해서 그 다음 붙이기.
+    // 요청은 이파일 요청에 대한 처리는 커스텀 훅에서 진행.
+
+    const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   
     return (
       <>
