@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./Navigation.js";
-import Home from "./pages/home";
-import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/Nopage";
+import Home from "./home";
+import About from "./About.js";
+import Products from "./Products.js";
+
 
 export default function RoutingApp(){
     return(
