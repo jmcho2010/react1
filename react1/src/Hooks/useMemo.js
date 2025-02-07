@@ -126,7 +126,7 @@ function OptimizedComponent({ data, onUpdate }) {
 
 
 // 3. 중첩 메모리제이션 처리.
-function NestedMemoization({ data }) {
+//function NestedMemoization({ data }) {
     // 1단계 데이터 처리
 //     const processedData = useMemo(() => {
 //       return data.map(item => ({
