@@ -41,6 +41,17 @@
 // Reducer : 관리할 state가 1개 이상일때, 값이 복잡하고 프로젝트의 규모가 클때
 //  -> 혹은 값이 유동적일때
 
+// useReducer에서 쓸수 있는 구성요소(함수)
+// 1. useReducer : state 갱신역할
+//    - state : 컴포넌트에서 사용할 상태값
+//    - dispatch : state를 업데이트할 함수.
+//    - reducer : 컴포넌트 외부에서 state를 업데이트 하는 로직을 담당하는 함수.
+//    - initialState : 초기 State
+//    - init : 초기 함수
+// 2. action : 업데이트를 위한 정보를 가지고있는 dispatch의 인자값(파라미터값)
+// 3. dispatch : reducer 함수 실행기.
+// 4. reducer : 컴포넌트 외부에서 상태를 업데이트 할때 사용하는 함수. 
+
 
 
 // useMemo
