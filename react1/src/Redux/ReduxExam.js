@@ -120,3 +120,61 @@
 
 // redux도 사용을 위해서는 우선 설치가 필요.
 // npm install redux react-redux @reduxjs/toolkit
+
+// Redux Toolkit
+// Redux 공식 상태 관리 도구 모음(Redux를 쉽게 적용하기 위한 표준 방식.)
+
+// 주요 특징
+//  - Redux 개발을 위한 표준화된 도구 모음 제공
+//  - 저장소 설정, Reducer 정의 단순화.
+//  - 불변 업데이트 로직 간소화.
+//  - 보일러플레이트 코드 감소.
+
+// 보일러플레이트 코드 : 최소한의 변경으로 여러곳에서 재사용되며
+//   반복적으로 비슷한 형태를 띄는 코드.
+//   -> 반복작업, 패턴에 대한 표준화 코드(공통 코드)
+
+// 보일러플레이트 코드는 완벽한가?
+// 이 코드의 장점?
+// 1. api화(재사용성)
+// 2. 똑같은 코드 그대로쓰니까 -> 그 코드가 문제없으면 실수 자체가 줄어들음.
+//    (코드 실수 최소화) -> 품질 개선.
+
+// 단점
+// 1. 체계적인 상황에서는 유리하지만 창의성은 제한됨.
+// 2. 유연하지 못한 코드 -> 클라이언트의 요구사항 맞추기가 어려워질수도...
+
+// 핵심 기능
+// 1. configureStore() : 스토어 설정 간소화
+//  - 개발환경 상태에서 상태 변이 검사 미들웨어 자동추가.
+// 예시
+//import { configureStore } from '@reduxjs/toolkit';
+
+// const store = configureStore({
+//   reducer: rootReducer, // 리듀서 지정
+//   middleware: [...middlewares], // 사용할 미들웨어 배열 설정
+//   devTools: true // Redux DevTools 사용 유무 설정.
+// });
+//  -> 
+// 2. createReducer() : 리듀서 작성 단순화.
+//  -> 이 함수가 없다면 우리는 state와 action관리시
+//     switch case를 거의 반 강제로 써야하는 상황이 발생.
+//  -> 로직의 단순화를 위해 사용
+// const counterReducer = createReducer(initialState, (builder) => {
+//     builder
+//       .addCase(increment, (state) => {
+//         state.value++
+//       })
+//       .addCase(decrement, (state) => {
+//         state.value--
+//       })
+//   });
+
+// 3. createAction() : 액션 생성자 함수 자동 생성
+//   -> 액션 생성 함수.
+
+// 4. createSlice() : 리듀서, 액션 자동생성
+// 5. createEntityAdapter : 정규화된 데이터 처리
+
+// 사실 toolkit 없이 redux 구현 가능.
+// toolkit이 있다면 훨씬 편하게 redux를 사용할수 있음.
