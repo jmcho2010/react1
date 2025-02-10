@@ -5,6 +5,8 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
+
 
 function Login(){
 
@@ -12,10 +14,12 @@ function Login(){
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate(); // 프로그래매틱 라우팅을 위한 훅
-    
+    const {login} = useAuth();
+
+
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if(Login(username, password)){
+        if(login(username, password)){
             navigate('/admin');
         }else{
             setError('로그인 실패!');
