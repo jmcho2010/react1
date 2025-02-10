@@ -1,11 +1,13 @@
 // 이 코드는 서버단에서 어떻게 처리되는지를 간략하게 작성한 코드.
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 // 인증관련 데이터를 저장할 Context를 생성.
-const AuthContext = createContext(null);
+// 커스텀 훅의 context나 컴포넌트, 메서드들은 전역에서 쓰려면
+// export를 추가.
+export const AuthContext = createContext(null);
 
-const AuthProvider = ({children}) =>{
+export const AuthProvider = ({children}) =>{
     // 로그인 상태 관리가 필요
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -49,4 +51,14 @@ const AuthProvider = ({children}) =>{
     );
 };
 
-export default AuthProvider;
+// 커스텀 훅은 만들고 나면 처리를 위해 일부 설정이 필요.
+
+// AuthContext의 사용을 간편하게 어디에서나 처리.
+// useContext를 통해 AuthContext에서 제공하는 값들을 가져옴.
+// 커스텀 훅의 이름을 useAuth로 지정 그후 다른 컴포넌트에서
+// 쉽게 인증관련 기능을 사용할수 있도록 처리.
+
+export const useAuth = () => useContext(AuthContext);
+
+// 이렇게 한 이유는 무엇?
+// 재사용성 향상, 문법자체를 더 간결히
