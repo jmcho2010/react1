@@ -14,6 +14,11 @@
 // 로그인
 // 사용자 입력화면 -> 사용자가 정보를 입력 -> 확인후 인증 처리
 
+import {AuthProvider} from './AuthContext'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './Login';
+import ProtectedRoute from './ProtectedRoute';
+
 
 // 이 과제는 조원들과 진행해주세요.
 function App() {
