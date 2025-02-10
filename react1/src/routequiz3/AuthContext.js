@@ -35,6 +35,11 @@ const AuthProvider = ({children}) =>{
         return false;
     }
 
+    const logout = () =>{
+        localStorage.removeItem('token');
+        setIsLoggedIn(false);
+    }
+
 
     // 로그인시, 로그아웃시 상태
     return(
@@ -44,4 +49,4 @@ const AuthProvider = ({children}) =>{
     );
 };
 
-export default AuthContext;
+export default AuthProvider;

@@ -1,6 +1,7 @@
 // 이화면은 로그인이 처리되고 난 후
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import {useAuth} from './AuthContext';
 
 function AdminPage() {
     const { logout } = useAuth();

@@ -18,7 +18,7 @@ import {AuthProvider} from './AuthContext'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './Login';
 import ProtectedRoute from './ProtectedRoute';
-
+import AdminPage from './AdminPage';
 
 // 이 과제는 조원들과 진행해주세요.
 function App() {
@@ -41,3 +41,5 @@ function App() {
       </AuthProvider>
     );
   }
+
+export default App;
