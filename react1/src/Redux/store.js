@@ -1,4 +1,8 @@
+// Redux toolkit의 configureStore 함수를 가져옴
+// redux의 스토어 설정시 사용하는 함수.
 import {configureStore} from '@reduxjs/toolkit';
+
+// counterSlice에서 만든 리듀서를 가져올때 사용.
 import counterReducer from './counterSlice';
 
 //어플리케이션이 시작되면 스토어가 생성
@@ -6,6 +10,11 @@ import counterReducer from './counterSlice';
 export const store = configureStore({
 
     reducer: {
+        // counter라는 키값으로 counterReducer를 등록.
+        // 스토어의 상태 구조를 결정.
         counter: counterReducer
     }
+    // configureStore는 자동으로 Redux DevTools Extension 연결과 
+    //  reduxt-thunk 미들웨어를 추가해줌.
+    //  또한 개발환경에서의 오류 체크또한.
 });

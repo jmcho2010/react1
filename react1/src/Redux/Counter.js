@@ -1,5 +1,6 @@
 // 간단한 카운팅 어플
 
+//useSelector : 스토어의 상태를 조회하는 hook
 import {useDispatch, useSelector} from 'react-redux';
 import {increment, decrement, incrementByAmount} from './counterSlice';
 function Counter(){
