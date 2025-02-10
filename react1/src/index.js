@@ -11,8 +11,8 @@ import Hooks8 from './Hooks/customHook.js'
 import Test from './basic/test.js'
 import RoutingApp from './RoutingApp.js';
 import RoutingQuiz1 from './routequiz1/App.js'
-
+import RoutingQuiz2 from './routequiz2/ProductList.js'
 
 //Hooks 전용 index
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<RoutingQuiz1 />);
+root.render(<RoutingQuiz2 />);

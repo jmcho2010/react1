@@ -14,10 +14,11 @@ function ProductList(){
               <div key={product.id} style={{ 
                 margin: '10px', padding: '10px', border: '1px solid crimson'
                 }}>
-
-                <h3></h3>
-                <p></p>
-
+                <Link to={`/product/${product.id}`}
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                <h3>{product.name}</h3>
+                <p>가격: {product.price} 원</p>
+                </Link>
               </div>  
             ))}
         </div>
