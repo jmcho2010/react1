@@ -37,3 +37,6 @@ const postSlice = createSlice({
     }
   
 })
+
+export const { actions } = postSlice;
+export default postSlice.reducer; // 리듀서 default export
