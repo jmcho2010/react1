@@ -172,9 +172,183 @@
 
 // 3. createAction() : 액션 생성자 함수 자동 생성
 //   -> 액션 생성 함수.
+//예시
+// import { createAction } from '@reduxjs/toolkit';
+
+// // 기본 액션 생성
+// const increment = createAction('increment');
+
+// // 페이로드와 함께 사용
+// const addTodo = createAction('ADD_TODO');
+// addTodo({ text: 'Buy milk' });
+// payload : 액션 객체의 목적 자체.
+//  -> 액션에 담겨진 값.
+// 결과: { type: 'ADD_TODO', payload: { text: 'Buy milk' } }
 
 // 4. createSlice() : 리듀서, 액션 자동생성
+// redux를 가장 단순하게 만들어주는 고마운 도구.
+// const counterSlice = createSlice({
+//     name: 'counter',
+//     initialState: { value: 0 },
+//     reducers: {
+//       increment: (state) => {
+//         state.value += 1;
+//       },
+//       decrement: (state) => {
+//         state.value -= 1;
+//       }
+//     }
+//   });
 // 5. createEntityAdapter : 정규화된 데이터 처리
+//  -> 정규화된 상태구조에서 / CRUD 작업을 수행하기 위한
+//     미리 만들어진 리듀서와 셀렉터를 생성하는 도구.
+
+// 기본 상태 구조
+// ids : 엔티티의 고유 id 배열
+// entities: id를 키로 하는 엔티티 객체 map 타입 데이터.
+
+// const booksAdapter = createEntityAdapter({
+//     selectId: (book) => book.bookId,
+//     sortComparer: (a, b) => a.title.localeCompare(b.title)
+//   });
+  
+//   const booksSlice = createSlice({
+//     name: 'books',
+//     initialState: booksAdapter.getInitialState(),
+//     reducers: {
+//       bookAdded: booksAdapter.addOne,
+//       booksReceived: booksAdapter.setMany
+//     }
+//   });
 
 // 사실 toolkit 없이 redux 구현 가능.
 // toolkit이 있다면 훨씬 편하게 redux를 사용할수 있음.
+// 6. createAsyncThunk : redux toolkit에서 제공하는 비동기 작업 처리함수
+//  -> 프로미스랑 비슷...
+
+
+// const fetchUser = createAsyncThunk(
+//     'users/fetchUser',
+//     async () => {
+//       const response = await fetch('/api/users');
+//       return response.json();
+//     }
+//   );
+
+// 리듀서 처리(extraReducer처리)
+// const slice = createSlice({
+//     name: 'users',
+//     initialState,
+//     reducers: {},
+//     extraReducers: (builder) => {
+//       builder
+//         .addCase(fetchUser.pending, (state) => {
+//           state.loading = 'pending';
+//         })
+//         .addCase(fetchUser.fulfilled, (state, action) => {
+//           state.loading = 'succeeded';
+//           state.data = action.payload;
+//         })
+//         .addCase(fetchUser.rejected, (state) => {
+//           state.loading = 'failed';
+//         });
+//     }
+//   })[3]
+
+// Redux 흐름 요약
+
+// 상태값을 전부 기억하기 어렵고 어떻게 redux를 접근해야할지 모르겠다면
+// 최소한 이 부분들이라도 기억해야함.
+
+// Store, Reducer, Action
+// Action -> dispatch -> Reducer 호출 -> store 생성
+
+// Subscribe(useSelector)
+//  -> 스토어가 값 변경되면 호출되는 함수.
+
+// dispatch(addEventListener react ver)
+
+
+// Redux와 비동기.
+//  -> 스토어는 기본적으로는 동기적 작업 처리가 가능.
+// 그렇다면 왜 스토어는 동기적 작업만 처리가 가능한가?
+//  -> 리듀서가 순수함수이기 때문, 부작용이 없어야해서.
+// 그리하여 Redux는 비동기 처리가 필요했기 때문에 Toolkit를 이용하여
+// 비동기 처리를 추가. -> createAsyncThunk
+
+// 처리순서
+// 1. 자동 액션을 생성
+// pending : 요청 시작
+// fulfilled : 요청 성공
+// rejected : 요청 실패
+
+
+
+// Redux Thunk
+//  -> Redux전용 미들웨어(액션 객체 대신 함수를 리턴받아주는 도구)
+//  -> 비동기 작업 처리시 사용
+
+// 1. 일반 액션 객체 대신에 함수 그 자체를 리턴시키고 싶을때 사용.
+//    (비동기 로직 자체를 캡슐화 / Promise 기반 비동기 작업 처리시 용이.)
+//  -> 액션 객체가 아닌 함수를 디스패치 할수 있음.
+
+
+// 작동방식
+// 액션이 함수냐 객체냐에 따라 동작방식은 달라짐
+//  -> 액션이 함수면 해당 함수 실행
+//  -> 액션이 객체면 다음 리듀서로 전달.
+
+// 예시
+
+// const asyncAction = createAsyncThunk(
+//     'actionType',  // 액션 타입 문자열
+//     async (payload, thunkAPI) => {  // 비동기 작업을 수행할 콜백 함수
+//       try {
+//         const response = await fetch('/api/data');
+//         return response.data;
+//       } catch (error) {
+//         return thunkAPI.rejectWithValue(error);
+//       }
+//     }
+//   );
+
+// 비동기 작업을 처리하기위한 표준방법.
+// Promise의 세가지 상태에 따른 액션을 자동으로 생성.
+
+// const slice = createSlice({
+//     name: 'example',
+//     initialState: {
+//       data: null,
+//       loading: false,
+//       error: null
+//     },
+//     reducers: {},
+//     extraReducers: (builder) => {
+//       builder
+//         .addCase(asyncAction.pending, (state) => {
+//           state.loading = true;
+//         })
+//         .addCase(asyncAction.fulfilled, (state, action) => {
+//           state.loading = false;
+//           state.data = action.payload;
+//         })
+//         .addCase(asyncAction.rejected, (state, action) => {
+//           state.loading = false;
+//           state.error = action.error;
+//         });
+//     }
+//   });
+
+// function Component() {
+//     const dispatch = useDispatch();
+//     const { data, loading, error } = useSelector((state) => state.example);
+  
+//     useEffect(() => {
+//       dispatch(asyncAction());
+//     }, [dispatch]);
+  
+//     if (loading) return <div>로딩 중...</div>;
+//     if (error) return <div>에러 발생</div>;
+    
+//     return <div>{data}</div>;
+//   }
