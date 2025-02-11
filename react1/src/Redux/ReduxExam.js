@@ -352,3 +352,50 @@
     
 //     return <div>{data}</div>;
 //   }
+
+// redux와 랜더링 성능 최적화.
+// 성능최적화 방법
+// 1. 불필요한 리랜더링 방지(필요한것만 적재적소에...)
+//    - useSelector를 사용할때 필요한 상태들만 정확하게 선택.
+//    - 여러 상태를 개별적으로 선택하여 사용
+//    - 컴포넌트가 필요로 하는 상태 조각에만 붙도록 설정.
+// 2. 메모리제이션 활용하기
+//    - useMemo, useCallback을 적재 적소에 활용.
+// 3. 상태 구조 최적화
+//    - 중첩 데이터 구조는 지양(피해야함)
+//    - 상태 최소 유지
+//    - 상태는 정규화된 구조를 활용하는것이 좋음.
+// 4. immer 활용
+//    - 상태 업데이트를 쉽게 제공해주는 라이브러리
+//    - 중첩된 객체도 쉽게 업데이트가 가능하며 상태 변경의관리를
+//    - 조금더 편하게 진행.
+// -> useMemo, useCallback hook의 활용
+const todoSlice = createSlice({
+    name: 'todo',
+    initialState: [],
+    reducers: {
+      add: (state, action) => {
+        state.push(action.payload);  // 직접 수정
+      },
+      remove: (state, action) => {
+        return state.filter(todo => todo.id !== action.payload);  // 새로운 상태 반환
+      }
+    }
+  });
+// 5. 개발자 도구 활용
+//   - redux DevTools를 사용한 성능 모니터링 
+//   - 컴포넌트 리랜더링 추적
+//   - 병목 현상 식별 및 해결.
+//   - 패키지 설치후 스토어 설정을 통해 react에서 디버깅 진행을 할수 있음.
+
+
+// redux 미들웨어 : 액션이 dispatch되어 reducer에서 처리되기전에 사전작업을
+//                  처리할수 있도록 도와주는 중간자.
+// 1. 로깅 미들웨어 : npm install redux-logger
+// 2. 비동기 작업처리
+// 3. 상태 가공
+
+
+
+
+
