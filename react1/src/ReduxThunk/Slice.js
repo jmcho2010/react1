@@ -8,6 +8,7 @@ export const fetchPosts = createAsyncThunk(
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/posts');
             const data = await response.json();
+            console.log("받아온 데이터 확인", data);
             return data;
         } catch (error) {
             return rejectWithValue('내용을 불러 오는것에 실패함');
@@ -27,11 +28,13 @@ const postSlice = createSlice({
     extraReducers: (builder) => {
       builder
         .addCase(fetchPosts.pending, (state) => {
+            console.log("여기까지 전달되나?5678");
           state.loading = 'pending';
         })
         .addCase(fetchPosts.fulfilled, (state, action) => {
+          console.log("여기까지 전달되나?1234");
           state.loading = 'succeeded';
-          state.data = action.payload;
+          state.posts = action.payload;
         })
         .addCase(fetchPosts.rejected, (state) => {
           state.loading = 'failed';

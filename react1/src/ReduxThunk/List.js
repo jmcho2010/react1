@@ -4,18 +4,25 @@ import { fetchPosts } from "./Slice";
 
 function List(){
     const dispatch = useDispatch();
-    const {posts, status, error} = useSelector(state => state.posts);
+    const {posts, status, error} = useSelector((state) => state.posts);
     
     useEffect(() =>{
+        console.log("실행되는거여?")
         dispatch(fetchPosts());
     }, [dispatch])
 
-    if (status === 'loading') return <div>로딩 중...</div>;
-    if (status === 'failed') return <div>{error}</div>;
+    if (status === 'loading') {
+        console.log("test");
+        return <div>로딩 중...</div>
+    };
+    if (status === 'failed') {
+        console.log("실행했는데 데이터 못받아옴")
+        return <div>{error}</div>
+    };
 
     return(
         <ul>
-            {posts.map(post =>(
+            {posts && posts.map(post =>(
                 <li key={post.id}>
                     <h3>{post.title}</h3>
                     <p>{post.body}</p>

@@ -16,12 +16,26 @@ import RoutingQuiz2 from './routequiz2/App.js'
 // import Redux1 from './Redux/Counter.js';
 // import { Provider } from 'react-redux';
 // import { store } from './Redux/store.js';
+
+import { Provider } from 'react-redux';
+import { store } from './ReduxThunk/store.js'
 import Redux2 from './ReduxThunk/App.js'
 
 
 //Hooks 전용 index
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Redux2 />);
+// root.render(<Redux2 />);
+root.render(
+    <React.StrictMode>
+        {/* redux를 사용할때는 최상위 컴포넌트는 반드시 Provider 컴포넌트에 감싸져야함
+            store props 또한 필수적으로 전달해줄 필요가 있음.*/ }
+        <Provider store={store}>
+            <Redux2 />
+        </Provider>
+    </React.StrictMode>
+);
+
+
 
 // redux를 쓰기위해서는 Provider 컴포넌트가 필요.
 // Provider에 store props를 필수로 전달해야함.
