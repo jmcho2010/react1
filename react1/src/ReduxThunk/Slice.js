@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
+
+
 export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts', // 액션타입 설정
     async(_, {rejectWithValue}) =>{
