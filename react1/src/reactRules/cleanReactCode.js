@@ -9,6 +9,12 @@
 //    (컴포넌트에 해당 기능에 대해서 필요한 것들만 작성.)
 
 // 2. OCP(Open Closed Principle) / 개방 폐쇄 원칙
+//    - 소프트웨어의 구성요소(컴포넌트, 클래스, 모듈, 함수)들은
+//      확장에는 열려있고 변경에는 닫혀있어야함.
+//    - 기존 소스코드 변경을 최소화 하면서 확장이 가능해야함
+//    - 문제없는 코드는 굳이 수정하지 않고 확장하면서 기능을 변경해도된다.
+//    - OCP는 비용에 관련된 내용이라 사장님들 입장에서는 매우중요
+
 // 3. LSP(Liskov Substitution Principle) / 리스코프 치환 원칙
 // 4. ISP(Interface Segregation Principle) / 인터페이스 분리 원칙
 // 5. DIP(Dependency Inversion Principle) / 의존 역전 원칙
