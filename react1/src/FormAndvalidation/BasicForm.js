@@ -4,7 +4,7 @@
 // 이 코드를 완성
 
 import { useState } from "react";
-
+import './BasicForm.css';
 // 요구사항
 // 1. 폼 상태 관리
 // 2. 입력값 변경 처리
@@ -111,6 +111,9 @@ function BasicForm(){
 
       };
 
+      // 컴포넌트의 ui를 구성할때 햇갈린다 싶으면
+      // html, css는 리엑트 프로젝트가 아닌 다른 경로에서
+      // 직접 만들어보고 컴포넌트에 붙여넣는식으로 작업하는 경우도있음.
       return (
         <form onSubmit={handleSubmit} className="basic-form">
           <div className="form-group">
