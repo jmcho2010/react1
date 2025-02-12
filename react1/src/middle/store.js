@@ -1,7 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import createLoggingMiddleware from './logginMiddleware' 
+import postReducer from './Slice';
+
 
 const store = configureStore({
-    reducer: rootReducer,
+    reducer: {
+        posts: postReducer
+    },
     middleware: (getDefaultMiddleware) => 
       getDefaultMiddleware().concat(
         createLoggingMiddleware({
@@ -10,3 +15,5 @@ const store = configureStore({
         })
       )
   });
+
+export default store;

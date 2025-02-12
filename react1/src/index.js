@@ -21,9 +21,11 @@ import RoutingQuiz2 from './routequiz2/App.js'
 // import { store } from './ReduxThunk/store.js'
 // import Redux2 from './ReduxThunk/App.js'
 
-import { Provider } from 'react-redux';
-import { store } from './DataChange/store.js'
-import Redux3 from './DataChange/App.js'
+// import { Provider } from 'react-redux';
+// import { store } from './DataChange/store.js'
+// import Redux3 from './DataChange/App.js'
+
+import CustomMiddle from './middle/App.js'
 
 
 //Hooks 전용 index
@@ -33,9 +35,7 @@ root.render(
     <React.StrictMode>
         {/* redux를 사용할때는 최상위 컴포넌트는 반드시 Provider 컴포넌트에 감싸져야함
             store props 또한 필수적으로 전달해줄 필요가 있음.*/ }
-        <Provider store={store}>
-            <Redux3 />
-        </Provider>
+        <CustomMiddle />
     </React.StrictMode>
 );
 
